@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code for Dashboard</title>
+  <!-- QRCode.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    #qrcode {
+      padding: 12px;
+      background: white;
+      border: 2px solid #333;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>📲 Scan to Open Dashboard</h2>
+  <div id="qrcode"></div>
+
+  <script>
+    // ✅ Put your dashboard link here
+    const dashboardLink = "http://10.14.189.202:5500/d1.html";
+
+    // Generate QR
+    new QRCode(document.getElementById("qrcode"), {
+      text: dashboardLink,
+      width: 220,
+      height: 220,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+</body>
+</html>

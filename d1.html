@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Segregation Dashboard</title>
+  <link rel="stylesheet" href="d2.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <button class="btn">Home</button>
+    <button class="btn">Customer Support</button>
+    <button class="btn">FAQs</button>
+  </nav>
+
+  <!-- MAIN GRID -->
+  <main class="container">
+    <!-- LEFT COLUMN -->
+    <section class="card profile-card">
+      <img id="profile-pic" class="avatar" alt="Profile">
+      <div class="profile-info">
+        <h1 id="profile-name">Samarth Vyas</h1>
+        <p id="profile-id" class="muted">ID: samarth</p>
+      </div>
+    </section>
+
+    <!-- CENTER COLUMN -->
+    <section class="card stat-card">
+      <h2 class="card-title">Live Segregation</h2>
+
+      <div class="stat-layout">
+        <!-- Circular meter -->
+        <div class="meter-wrap">
+          <svg class="meter" viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="0%">
+                <stop offset="0%" />
+                <stop offset="100%" />
+              </linearGradient>
+            </defs>
+            <circle class="meter-bg" cx="60" cy="60" r="48"></circle>
+            <circle class="meter-fill" cx="60" cy="60" r="48" stroke-linecap="round"></circle>
+            <text id="meter-text" class="meter-text" x="60" y="66" text-anchor="middle">0%</text>
+          </svg>
+        </div>
+
+        <!-- Feedback -->
+        <div class="feedback-box">
+          <h3>Feedback</h3>
+          <p><strong>Points:</strong> <span id="feedback-points">-</span>/10</p>
+          <p><strong>Date:</strong> <span id="feedback-date">-</span></p>
+          <p><strong>Time:</strong> <span id="feedback-time">-</span></p>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="bar-wrap">
+        <div class="bar-labels">
+          <span class="muted">Segregated</span>
+          <span id="seg-value" class="seg-value">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT COLUMN -->
+    <section class="card history-card">
+      <h2 class="card-title">Past Records</h2>
+      <ul id="history-list" class="history-list">
+        <!-- JS fills here -->
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
