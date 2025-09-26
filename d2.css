@@ -1,29 +1,28 @@
-:root{
-  --bg: #0f1724;
-  --card: #0b1220;
-  --accent-start: #4caf50;
-  --accent-end: #81c784;
-  --muted: #9aa4b2;
+:root {
+  --bg: #e5e7eb;          /* full-page light gray background */
+  --card: #f9fafb;        /* slightly lighter gray for cards */
+  --accent-start: #2563eb; /* blue */
+  --accent-end: #9333ea;   /* purple */
+  --muted: #4b5563;        /* darker muted gray */
 }
-
 *{box-sizing:border-box; margin:0; padding:0;}
-html, body{
-  height:100%;
+html, body {
+  height: 100%;
   font-family: Inter, sans-serif;
-  background: var(--bg);
-  color: #e6eef6;
-  display:flex;
-  flex-direction:column;
+  background: #E3F2FD or #BBDEFB
+;   /* gray background */
+  color: #111827;          /* dark text for readability */
+  display: flex;
+  flex-direction: column;
 }
-
 /* Navbar */
-.navbar{
-  display:flex;
-  justify-content:flex-start;
-  gap:16px;
-  padding:16px 24px;
-  background: rgba(255,255,255,0.04);
-  border-bottom:1px solid rgba(255,255,255,0.08);
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 16px 24px;
+  background: #d1d5db;     /* medium gray */
+  border-bottom: 1px solid #9ca3af;
 }
 .btn{
   background: linear-gradient(90deg,var(--accent-start),var(--accent-end));
@@ -50,16 +49,15 @@ html, body{
 }
 
 /* Card */
-.card{
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.04);
-  border-radius:14px;
-  padding:22px;
-  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-  display:flex;
-  flex-direction:column;
+.card {
+  background: #e9e4e4; /* pure white cards */
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
 }
-
 /* Profile */
 .profile-card{ align-items:center; justify-content:center; }
 .avatar{
@@ -67,15 +65,15 @@ html, body{
   height:120px;
   border-radius:14px;
   object-fit:cover;
-  border:3px solid rgba(255,255,255,0.06);
+  border:3px solid rgba(62, 194, 192, 0.06);
   margin-bottom:12px;
 }
-.profile-info h1{margin:0 0 6px;font-size:20px;}
+.profile-info h1{margin:0 0 6px;font-size:35px;}
 .muted{ color: var(--muted); font-size:14px; }
 
 /* Stats */
 .stat-card{ justify-content:space-between; }
-.card-title{ margin:0 0 14px; font-size:18px; color:#dff1db; }
+.card-title{ margin:0 0 14px; font-size:18px; color:black; }
 .stat-layout{ display:flex; gap:24px; align-items:center; flex:1; }
 
 /* Meter */
@@ -92,7 +90,7 @@ html, body{
   stroke-dashoffset: 301.6;
   transition: stroke-dashoffset 1s ease;
 }
-.meter-text{ font-size:28px; fill:#e8f7ea; font-weight:600; }
+.meter-text{ font-size:28px; fill:black; font-weight:600; }
 
 /* Feedback */
 .feedback-box{
@@ -102,7 +100,7 @@ html, body{
   border-radius:12px;
   border:1px solid rgba(255,255,255,0.08);
 }
-.feedback-box h3{ margin-top:0; font-size:16px; color:#dff1db; }
+.feedback-box h3{ margin-top:0; font-size:42px; color:black; }
 .feedback-box p{ margin:6px 0; font-size:15px; }
 
 /* Progress bar */
@@ -113,6 +111,11 @@ html, body{
   background: rgba(255,255,255,0.08);
   border-radius:999px;
   overflow:hidden;
+}
+.card-title {
+    margin: 0 0 14px;
+    font-size: 40px;
+    color: black;
 }
 .progress-fill{
   height:100%;
@@ -136,4 +139,8 @@ html, body{
 @media(max-width:1000px){
   .container{ grid-template-columns:1fr; }
   .stat-layout{ flex-direction:column; }
+}
+.muted { 
+  color: var(--muted); 
+  font-size: 14px; 
 }
