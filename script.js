@@ -37,10 +37,29 @@ setTimeout(()=> {
 }, 100);
 
 // Animate circle
-const circ = 2 * Math.PI * 48;
-document.querySelector(".meter-fill").style.strokeDashoffset = circ * (1 - pct/100);
+const segValueEl = document.getElementById("seg-value");
+const meterTextEl = document.getElementById("meter-text");
+const meterCircle = document.querySelector(".meter-fill");
 
-// Gradient colors
+const targetPct = profile.segregation; // 82%
+const circ = 2 * Math.PI * 48;          // circumference of circle
+let currentPct = 0;
+const duration = 1500;  // animation duration in ms
+const intervalTime = 15; // update every 15ms
+
+const step = targetPct / (duration / intervalTime);
+
+const animateSeg = setInterval(() => {
+  currentPct += step;
+  if(currentPct >= targetPct){
+    currentPct = targetPct;
+    clearInterval(animateSeg);
+  }
+  const displayPct = Math.round(currentPct);
+  segValueEl.textContent = displayPct + "%";
+  meterTextEl.textContent = displayPct + "%";
+  meterCircle.style.strokeDashoffset = circ * (1 - currentPct/100);
+}, intervalTime);
 const style = getComputedStyle(document.documentElement);
 const start = style.getPropertyValue('--accent-start');
 const end = style.getPropertyValue('--accent-end');
